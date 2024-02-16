@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" th:href="@{/style/style.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand"  th:href="@{/}">Freshii</a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/jbsrpsk" target="_blank">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" th:href="@{/cart/}">Cart</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input
+                        class="px-3 search"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                />
+                <button class="btn0 px-3" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<section class="main">
+    <div class="container py-5">
+        <div class="row py-5">
+            <div class="col-lg-7 pt-5 text-center">
+                <h1 class="pt-4">
+                    <span style="font-size: 4rem">Quality Ingredients</span><br />
+                    Freshly Served
+                </h1>
+                <button class="btn1 mt-3" id="scrollToShopping"  >Shop with us</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="prodcutsSection" id="productSection">
+    <div class="container py-5">
+        <div class="row py-5">
+            <div class="col-lg-5 m-auto text-center">
+                <h1>What's Trending?</h1>
+                <h6 style="color: green">Always Shop Fresh</h6>
+            </div>
+        </div>
+        <div class="row products">
+            <div class="col-md-3 productItems">
+                <div class="card-container text-center bg-light p-2">
+                    <div class="card-item p-4 bg-light">
+                        <img src="/assets/banana.png" class="img-fluid" alt="banana" />
+                    </div>
+                    <h5>Banana</h5>
+                    <h6>$4.99/ea</h6>
+                    <form action="/cart/add" method="post">
+                        <input type="hidden" name="item" value="Banana">
+                        <input type="hidden" name="price" value="4.99">
+                        <input type="hidden" name="image"  value="/assets/banana.png">
+                        <button class="btn btn-success mt-2 p-2 cart-item">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+
+                <div class="col-md-3 productItems">
+                    <div class="card-container text-center bg-light p-2">
+                        <div class="card-item p-4 bg-light">
+                            <img src="/assets/apples.png" class="img-fluid" alt="apples" />
+                        </div>
+                        <h5>Apples</h5>
+                        <h6>$5.99/ea</h6>
+                        <form action="/cart/add" method="post">
+                            <input type="hidden" name="item" value="Apples">
+                            <input type="hidden" name="price" value="5.99">
+                            <input type="hidden" name="image"  value="/assets/apples.png">
+                            <button class="btn btn-success mt-2 p-2 cart-item">Add to Cart</button>
+                        </form>
+                    </div>
+                    </div>
+
+                    <div class="col-md-3 productItems">
+                        <div class="card-container text-center bg-light p-2">
+                            <div class="card-item p-4 bg-light">
+                                <img src="/assets/bread.png" class="img-fluid" alt="banana" />
+                            </div>
+                            <h5>Bread</h5>
+                            <h6>$2.22/ea</h6>
+                            <form action="/cart/add" method="post">
+                                <input type="hidden" name="item" value="Bread">
+                                <input type="hidden" name="price" value="2.22">
+                                <input type="hidden" name="image"  value="/assets/bread.png">
+                                <button class="btn btn-success mt-2 p-2 cart-item">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+
+                        <div class="col-md-3 productItems">
+                            <div class="card-container text-center bg-light p-2">
+                                <div class="card-item p-4 bg-light">
+                                    <img src="/assets/orange.png" class="img-fluid" alt="banana" />
+                                </div>
+                                <h5>Orange</h5>
+                                <h6>$3.72/ea</h6>
+                                <form action="/cart/add" method="post">
+                                    <input type="hidden" name="item" value="Orange">
+                                    <input type="hidden" name="price" value="3.72">
+                                    <input type="hidden" name="image"  value="/assets/orange.png">
+                                    <button class="btn btn-success mt-2 p-2 cart-item">Add to Cart</button>
+                                </form>
+                            </div>
+                        </div>
+
+                            <div class="col-md-3 productItems">
+                                <div class="card-container text-center bg-light p-2">
+                                    <div class="card-item p-4 bg-light">
+                                        <img src="/assets/greenpepper.png" class="img-fluid" alt="banana" />
+                                    </div>
+                                    <h5>Green Pepper</h5>
+                                    <h6>$6.99/ea</h6>
+                                    <form action="/cart/add" method="post">
+                                        <input type="hidden" name="item" value="Green Pepper">
+                                        <input type="hidden" name="price" value="6.99">
+                                        <input type="hidden" name="image"  value="/assets/greenpepper.png">
+                                        <button class="btn btn-success mt-2 p-2 cart-item">Add to Cart</button>
+                                    </form>
+                                </div>
+                            </div>
+
+
+            <div class="col-md-3 productItems">
+                <div class="card-container text-center bg-light p-2">
+                    <div class="card-item p-4 bg-light">
+                        <img src="/assets/lettuce.png" class="img-fluid" alt="banana" />
+                    </div>
+                    <h5>Lettuce</h5>
+                    <h6>$1.89/ea</h6>
+                    <form action="/cart/add" method="post">
+                        <input type="hidden" name="item" value="Lettuce">
+                        <input type="hidden" name="price" value="1.89">
+                        <input type="hidden" name="image"  value="/assets/lettuce.png">
+                        <button class="btn btn-success mt-2 p-2 cart-item">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</section>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"
+></script>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
